@@ -1,5 +1,5 @@
 {
-	"name": "outputds",
+	"name": "outputdataset",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "AzureBlobStorage",
