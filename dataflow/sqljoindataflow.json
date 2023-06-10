@@ -25,7 +25,11 @@
 						"referenceName": "outputdataset",
 						"type": "DatasetReference"
 					},
-					"name": "sqljoinsinkdata"
+					"name": "sqljoinsinkdata",
+					"rejectedDataLinkedService": {
+						"referenceName": "AzureBlobStorage",
+						"type": "LinkedServiceReference"
+					}
 				}
 			],
 			"transformations": [
@@ -62,7 +66,15 @@
 				"jointable sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sqljoinsinkdata"
+				"     skipDuplicateMapOutputs: true,",
+				"     mapColumn(",
+				"          FirstName,",
+				"          LastName,",
+				"          Email,",
+				"          CName,",
+				"          department,",
+				"          location",
+				"     )) ~> sqljoinsinkdata"
 			]
 		}
 	}
