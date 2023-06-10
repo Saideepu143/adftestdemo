@@ -15,7 +15,7 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "outputds",
+						"referenceName": "outputdataset",
 						"type": "DatasetReference"
 					},
 					"name": "sink1",
