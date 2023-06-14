@@ -1,0 +1,356 @@
+{
+	"name": "cpypipeline",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobFSReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "*Server name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "*Server name",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "IP addresses",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "IP addresses",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "*Cores",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "*Cores",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "*Memory (In MB)",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "*Memory (In MB)",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "*OS name",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "*OS name",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "OS version",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "OS version",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "OS architecture",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "OS architecture",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "CPU utilization percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "CPU utilization percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Memory utilization percentage",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Memory utilization percentage",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Network adapters",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Network adapters",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Network In throughput",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Network In throughput",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Network Out throughput",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Network Out throughput",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Boot type",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Boot type",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Number of disks",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Number of disks",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Disk 1 size (In GB)",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Disk 1 size (In GB)",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Disk 1 read throughput (MB per second)",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Disk 1 read throughput (MB per second)",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Disk 1 write throughput (MB per second)",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Disk 1 write throughput (MB per second)",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Disk 1 read ops (operations per second)",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Disk 1 read ops (operations per second)",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Disk 1 write ops (operations per second)",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Disk 1 write ops (operations per second)",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Disk 2 size (In GB)",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Disk 2 size (In GB)",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Disk 2 read throughput (MB per second)",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Disk 2 read throughput (MB per second)",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Disk 2 write throughput (MB per second)",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Disk 2 write throughput (MB per second)",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Disk 2 read ops (operations per second)",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Disk 2 read ops (operations per second)",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "Disk 2 write ops (operations per second)",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "Disk 2 write ops (operations per second)",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "inputds",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "outputds",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
